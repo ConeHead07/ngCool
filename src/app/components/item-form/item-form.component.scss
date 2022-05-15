@@ -1,0 +1,10 @@
+.frm-control {
+  width: 100%;
+}
+.frm-control + .frm-control {
+  margin-top: 1rem;
+}
+
+.mat-action-row.align-middle {
+  justify-content: space-evenly;
+}

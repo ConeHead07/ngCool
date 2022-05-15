@@ -1,0 +1,56 @@
+
+  <div *ngIf="fridgeId">
+
+    <mat-accordion #accordion="matAccordion">
+      <mat-expansion-panel cy-fridge-item *ngFor="let item of inventory">
+        <mat-expansion-panel-header #accordionHeader>
+          <mat-panel-title>
+            {{ item.name }}
+            {{ item.actual }} / {{ item.target }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Hier können Sie den Bestand ändern.</p>
+
+        <app-item-form
+          [input]="item"
+          (update)="updateItem($event)"
+          (cancel)="accordionHeader._toggle()"
+          (error)="showError($event)"></app-item-form>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+    </div>
+
+
+  <div *ngIf="!fridgeId" class="align-middle">
+    <button cy-create-fridge mat-raised-button color="primary" (click)="createFridge()">
+      CoolSchrank anlegen
+    </button>
+  </div>
+
+  <div *ngIf="fridgeId" class="align-middle">
+
+    <button cy-btn-add-item mat-raised-button color="accent" class="fab" (click)="showCreateItem()">
+      <mat-icon>add</mat-icon> Inhalt hinzufügen
+    </button>
+
+    <button cy-btn-reload-items mat-mini-fab color="accent" class="fab" (click)="listItems()">
+      <mat-icon>autorenew</mat-icon>
+    </button>
+    <div class="height-spacer-3"></div>
+
+    <div class="margin-top-1" *ngIf="isDebugMode">
+      Fridge-ID:<br>{{ fridgeId }}
+
+      <div  *ngFor="let item of inventory">
+        {{ item | json }}
+      </div>
+
+    </div>
+
+    <button cy-btn-remove-fridge class="margin-top-1" mat-stroked-button color="warn" (click)="removeFridge()">
+      CoolSchrank entfernen
+    </button>
+  </div>
+

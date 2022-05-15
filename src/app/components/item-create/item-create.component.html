@@ -1,0 +1,10 @@
+<div class="bottom-sheet" cy-sheet-create-new>
+  <h1>Neuen Inhalt anlegen</h1>
+
+  <app-item-form [editableTitle]="true"
+                 [input]="input"
+                 (update)="onUpdate($event)"
+                 (cancel)="cancel.emit($event)"
+                 (error)="onError($event)"></app-item-form>
+</div>
+

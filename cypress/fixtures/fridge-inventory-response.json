@@ -1,0 +1,29 @@
+{
+  "id": "aeb7821c-7e62-4912-8f50-ce53646aab20",
+  "inventory": [
+    {
+      "id": 1,
+      "name": "Milch",
+      "actual": 0,
+      "target": 3
+    },
+    {
+      "id": 2,
+      "name": "Joghurt",
+      "actual": 0,
+      "target": 5
+    },
+    {
+      "id": 3,
+      "name": "Butter",
+      "actual": 0,
+      "target": 2
+    },
+    {
+      "id": 4,
+      "name": "Quark",
+      "actual": 0,
+      "target": 3
+    }
+  ]
+}

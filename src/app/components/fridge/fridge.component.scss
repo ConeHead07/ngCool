@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin: 16px 0;
+}
+
+mat-expansion-panel {
+  margin-bottom: 16px;
+}
+
+button.fab {
+  margin-left: 2rem;
+}
+.xfab {
+  position: fixed;
+  right: 3rem;
+  bottom: 1rem;
+}
+.height-spacer-3 {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.align-middle {
+  text-align: center;
+}
+
+.margin-top-1 {
+  margin-top:1rem;
+}
+
