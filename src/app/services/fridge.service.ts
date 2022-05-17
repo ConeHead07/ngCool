@@ -13,12 +13,8 @@ export class FridgeService {
     this.baseUrl = environment.apiUrl;
   }
 
+
   createFridge(): Observable<FridgeResponse> {
-    let xr = this.httpClient.post<FridgeResponse>(`${this.baseUrl}/fridge`, {});
-    xr.subscribe( (a) => {
-      a.id;
-      a.inventory
-    })
     return this.httpClient.post<FridgeResponse>(`${this.baseUrl}/fridge`, {});
   }
 
