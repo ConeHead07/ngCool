@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, tap} from 'rxjs';
 import {fridgeId, FridgeAddItem, FridgeItem, FridgeResponse } from '../models/fridge';
 import { environment } from '../../environments/environment';
 
@@ -23,6 +23,7 @@ export class FridgeService {
   }
 
   addItem(fridgeId: fridgeId, item: FridgeAddItem): Observable<FridgeItem> {
+    console.log("addItem was called in fridgeService #1", { fridgeId, item });
     return this.httpClient.post<FridgeItem>(`${this.baseUrl}/fridge/${fridgeId}/item`, item);
   }
 

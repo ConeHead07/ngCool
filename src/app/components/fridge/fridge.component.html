@@ -2,7 +2,7 @@
   <div *ngIf="fridgeId">
 
     <mat-accordion #accordion="matAccordion">
-      <mat-expansion-panel cy-fridge-item *ngFor="let item of inventory">
+      <mat-expansion-panel cy-fridge-item *ngFor="let item of items$ | async" (afterExpand)="panelExpand(item.id)" (afterCollapse)="panelCollapse(item.id)">
         <mat-expansion-panel-header #accordionHeader>
           <mat-panel-title>
             {{ item.name }}
@@ -29,9 +29,9 @@
     </button>
   </div>
 
-  <div *ngIf="fridgeId" class="align-middle">
+  <div *ngIf="fridgeId$ | async" class="align-middle">
 
-    <button cy-btn-add-item mat-raised-button color="accent" class="fab" (click)="showCreateItem()">
+    <button *ngIf="addEnabled$ | async" cy-btn-add-item mat-raised-button color="accent" class="fab" (click)="showCreateItem()">
       <mat-icon>add</mat-icon> Inhalt hinzufügen
     </button>
 
